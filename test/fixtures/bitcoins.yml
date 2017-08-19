@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cardamount: MyString
+  number: 1
+  user_id: 1
+  bitcoinnumber: MyString
+  terms: false
+
+two:
+  cardamount: MyString
+  number: 1
+  user_id: 1
+  bitcoinnumber: MyString
+  terms: false

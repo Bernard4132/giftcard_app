@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bitcoins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cardamount</th>
+      <th>Number</th>
+      <th>User</th>
+      <th>Bitcoinnumber</th>
+      <th>Terms</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bitcoins.each do |bitcoin| %>
+      <tr>
+        <td><%= bitcoin.cardamount %></td>
+        <td><%= bitcoin.number %></td>
+        <td><%= bitcoin.user_id %></td>
+        <td><%= bitcoin.bitcoinnumber %></td>
+        <td><%= bitcoin.terms %></td>
+        <td><%= link_to 'Show', bitcoin %></td>
+        <td><%= link_to 'Edit', edit_bitcoin_path(bitcoin) %></td>
+        <td><%= link_to 'Destroy', bitcoin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bitcoin', new_bitcoin_path %>

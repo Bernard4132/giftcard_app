@@ -1,0 +1,214 @@
+ 
+<% if signed_in? %>
+<style type="text/css">
+.navbar{
+  background-color: #ffffff;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+}
+
+.autocent1{
+    margin-left: 35%;
+margin-right:35%;
+width: 30%; 
+}
+
+.pendingcards{
+  background-color: #e9ecef;
+  width: 100%;
+  min-height: 150px;
+}
+
+</style>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #ffffff">
+  <a class="navbar-brand" style="color: #eb3812;" href="#">Itunes Gift Cards</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Help</a>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Sign Out", destroy_user_session_path, :method => :delete, :class => "nav-link" %>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+
+    <div class="jumbotron jumbotron-fluid" style="padding: 20px;">
+  <h1 class="display-3" style="text-align: center;">Hello, <%= current_user.firstname %></h1>
+  <p class="lead" style="text-align: center;">This is your Dashboard. Add your gift cards by clicking on the button below. Also check here for the status on your order. Wether pending or approved.</p>
+  <hr class="my-4">
+  <p style="text-align: center;">The processes followed here are very simple and payment is made within than 48 hours of confirmation and approval.</p>
+  <p style="width: 100%;">
+    <a class="btn btn-success btn-lg autocent1" href="/bitcoins/new" role="button">Add Gift Card</a>
+  </p>
+</div>
+  </div>
+  <% if notice %>
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <p class="notice"><%= notice %></p>
+</div>
+<% end %>
+<br>
+  <div class="container">
+  <h4>Pending Confirmation</h4>
+  <div class="pendingcards">
+    <br>
+    <br>
+    <h3 style="text-align: center; font-weight: 300;"> You do not have any giftcards awaiting confirmation <i class="fa fa-smile-o" aria-hidden="true"></i></h3>
+  </div>
+  </div>
+<br>
+<br>
+  <div class="container">
+  <h4 style="color: #32cd56;">Confirmed and Approved</h4>
+  <div class="pendingcards">
+    <br>
+    <br>
+    <h3 style="text-align: center; font-weight: 300;"> You do not have any confirmed and approved cards <i class="fa fa-smile-o" aria-hidden="true"></i></h3>
+  </div>
+  </div>
+
+  </body>
+
+  <% else %>
+          <%= stylesheet_link_tag 'creative.css', :media => 'all' %>
+ <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <a class="navbar-brand" href="#page-top">Itunes Giftcards</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/users/sign_in">Sign in</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/sign_up">Sign up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#portfolio">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="masthead">
+      <div class="header-content">
+        <div class="header-content-inner">
+          <h1 id="homeHeading">Earn Good money in exchange for your Itunes Gift Cards.</h1>
+          <hr>
+          <p>Sign up here simply and upload your itunes gift cards for a fraction of its price. Good business. No strings attached to our terms.</p>
+          <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="bg-primary">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading text-white">We've got what you need!</h2>
+            <hr class="light">
+            <p class="text-faded">I'm guessing perhaps you have some itunes giftcards of which you have no use for. Why not exchange them for money. We pay you with mobile money and bitcoin. Sounds interesting right? Sign Up and start getting money.</p>
+            <a class="btn btn-default btn-xl sr-button" href="/users/sign_up">Get Started!</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Our Process</h2>
+            <hr class="primary">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box">
+              <i class="fa fa-4x fa-user-plus text-primary sr-icons"></i>
+              <h3>Sign Up first</h3>
+              <p class="text-muted">Sign up first to be able to add gift cards for money.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box">
+              <i class="fa fa-4x fa-plus-circle text-primary sr-icons"></i>
+              <h3>Add your gift card</h3>
+              <p class="text-muted">Add gift card by stating the face value and uploading a picture of the front and back of the card</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box">
+              <i class="fa fa-4x fa-check-square-o text-primary sr-icons"></i>
+              <h3>Approval and Confirmation</h3>
+              <p class="text-muted">Your images will be audited. Once approved a confirmation email will be sent to your email.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box">
+              <i class="fa fa-4x fa-heart text-primary sr-icons"></i>
+              <h3>Recive Payment</h3>
+              <p class="text-muted">Now you receive your money! Money is payable by mobile money and also Bitcoin.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="call-to-action bg-dark">
+      <div class="container text-center">
+        <h2>Sign Up and Start uploading your gift cards Today</h2>
+        <a class="btn btn-default btn-xl sr-button" href="/users/sign_up">Sign Up Now!</a>
+      </div>
+    </div>
+
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading">Let's Get In Touch!</h2>
+            <hr class="primary">
+            <p>You can contact us for more clarification and partnerships.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 ml-auto text-center">
+            <i class="fa fa-phone fa-3x sr-contact"></i>
+            <p>123-456-6789</p>
+          </div>
+          <div class="col-lg-4 mr-auto text-center">
+            <i class="fa fa-envelope-o fa-3x sr-contact"></i>
+            <p>
+              <a href="mailto:your-email@your-domain.com">nathan@itunescards.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </body>
+ 
+  <% end %>

@@ -1,0 +1,59 @@
+
+<style type="text/css">
+
+.adonsini{
+  margin-left: 35%;
+margin-right:35%;
+width: 30%; 
+}
+
+</style>
+
+<%= form_for(bitcoin) do |f| %>
+  <% if bitcoin.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bitcoin.errors.count, "error") %> prohibited this bitcoin from being saved:</h2>
+
+      <ul>
+      <% bitcoin.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<label for="ten_dollars"><i style="color: #eb3812;" class="fa fa-2x fa-gift" aria-hidden="true"></i> <span style="margin-right: 5px;">10 dollar gift card</span></label>
+  <input type="radio" name="bitcoin[cardamount]" id="bitcoin_cardamount_1" value="10" onclick="calculateTotal()" />
+<br>
+  <label for="fifteen_dollars"><i style="color: #eb3812;" class="fa fa-2x fa-gift" aria-hidden="true"></i> <span style="margin-right: 5px;">15 dollar gift card</span></label>
+  <input type="radio" name="bitcoin[cardamount]" id="bitcoin_cardamount_2" value="15" onclick="calculateTotal()" />
+<br>
+  <label for="tewentyfive_dollars"><i style="color: #eb3812;" class="fa fa-2x fa-gift" aria-hidden="true"></i> <span style="margin-right: 5px;">25 dollar gift card</span></label>
+  <input type="radio" name="bitcoin[cardamount]" id="bitcoin_cardamount_3" value="25" onclick="calculateTotal()" />
+<br>
+  <label for="fifty_dollars"><i style="color: #eb3812;" class="fa fa-2x fa-gift" aria-hidden="true"></i> <span style="margin-right: 5px;">50 dollar gift card</span></label>
+  <input type="radio" name="bitcoin[cardamount]" id="bitcoin_cardamount_4" value="50" onclick="calculateTotal()" />
+<br>
+  <label for="hundred_dollars"><i style="color: #eb3812;" class="fa fa-2x fa-gift" aria-hidden="true"></i> <span style="margin-right: 5px;">100 dollar gift card</span></label>
+  <input type="radio" name="bitcoin[cardamount]" id="bitcoin_cardamount_5" value="100" onclick="calculateTotal()" />
+<br>
+<label><span style="font-weight: 700;">Number of gift cards</span></label>
+ <select class="custom-select mb-2 mr-sm-2 mb-sm-0" name="bitcoin[number]" id="bitcoin_number" onchange="calculateTotal()">
+    <option selected>Number of cards</option>
+    <option value="1" name="bitcoin[number]" id="bitcoin_number">One</option>
+    <option value="2" name="bitcoin[number]" id="bitcoin_number">Two</option>
+    <option value="3" name="bitcoin[number]" id="bitcoin_number">Three</option>
+    <option value="4" name="bitcoin[number]" id="bitcoin_number">Four</option>
+    <option value="5" name="bitcoin[number]" id="bitcoin_number">Five</option>
+    <option value="6" name="bitcoin[number]" id="bitcoin_number">Six</option>
+    <option value="7" name="bitcoin[number]" id="bitcoin_number">Seven</option>
+    <option value="8" name="bitcoin[number]" id="bitcoin_number">Eight</option>
+    <option value="9" name="bitcoin[number]" id="bitcoin_number">Nine</option>
+    <option value="10" name="bitcoin[number]" id="bitcoin_number">Ten</option>
+  </select>
+
+  <div class="actions" style="margin-top: 20px;">
+    <%= f.submit "Next", :class => "btn btn-primary adonsini" %>
+  </div>
+<% end %>
