@@ -3,9 +3,16 @@ class GcpictureUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
+  include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
+  if Rails.env.production?
+    storage :fog
+  end
+
+  if Rails.env.development?
   storage :file
+  end
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
@@ -21,6 +28,19 @@ class GcpictureUploader < CarrierWave::Uploader::Base
   #
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
+
+    version :thumb do
+    process resize_and_pad: [72, 72, "#fff", "Center"]
+  end
+
+  version :partialimage do
+    process resize_and_pad: [500, 500, "#fff", "Center"]
+  end
+
+  # Create different versions of your uploaded files:
+   version :cover do
+     process resize_and_pad: [400, 300, "#fff", "Center"]
+   end
 
   # Process files as they are uploaded:
   # process scale: [200, 300]

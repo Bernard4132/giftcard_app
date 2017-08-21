@@ -65,6 +65,12 @@
   <%= @bitcoin.terms %>
 </p>
 
+<ul style="list-style-type: none;">
+    <%= render @bitcoin.photos %>
+</ul>
+
+<%= link_to 'Confirm Transaction', confirm_bitcoin_path(@bitcoin), method: :post, :class => "btn btn-info", :style => "margin-top: 10px; margin-right: 10px;" %>
+
 </div>
 </div>
 </div>

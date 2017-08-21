@@ -17,8 +17,7 @@ class BitcoinStepsController < ApplicationController
             @bitcoin.photos.create(gcpicture: photo[:gcpicture])
           end
         end
-        redirect_to "/"
-          flash[:notice] = 'Successfully Submitted. You will receive an email after apporval and confirmation of receipt.'
+        redirect_to @bitcoin
     end
   end
   

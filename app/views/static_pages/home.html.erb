@@ -13,7 +13,8 @@ width: 30%;
 }
 
 .pendingcards{
-  background-color: #e9ecef;
+  background-color: #ffffff;
+  border: 3px solid #e9ecef;
   width: 100%;
   min-height: 150px;
 }
@@ -47,7 +48,7 @@ width: 30%;
   <h1 class="display-3" style="text-align: center;">Hello, <%= current_user.firstname %></h1>
   <p class="lead" style="text-align: center;">This is your Dashboard. Add your gift cards by clicking on the button below. Also check here for the status on your order. Wether pending or approved.</p>
   <hr class="my-4">
-  <p style="text-align: center;">The processes followed here are very simple and payment is made within than 48 hours of confirmation and approval.</p>
+  <p style="text-align: center;">The processes followed here are very simple and payment is made within 48 hours of confirmation and approval.</p>
   <p style="width: 100%;">
     <a class="btn btn-success btn-lg autocent1" href="/bitcoins/new" role="button">Add Gift Card</a>
   </p>
@@ -63,11 +64,28 @@ width: 30%;
 <% end %>
 <br>
   <div class="container">
-  <h4>Pending Confirmation</h4>
+  <h4>Pending Approval</h4>
   <div class="pendingcards">
+    <% if @userconfirmedcards.any? %>
+    <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Show</th>
+      <th>Aprroval</th>
+    </tr>
+  </thead>
+  <tbody>
+        <%= render @userconfirmedcards %>
+</tbody>
+</table>
+    <% else %>
     <br>
     <br>
     <h3 style="text-align: center; font-weight: 300;"> You do not have any giftcards awaiting confirmation <i class="fa fa-smile-o" aria-hidden="true"></i></h3>
+    <% end %>
   </div>
   </div>
 <br>
@@ -75,9 +93,26 @@ width: 30%;
   <div class="container">
   <h4 style="color: #32cd56;">Confirmed and Approved</h4>
   <div class="pendingcards">
+     <% if @userapprovedcards.any? %>
+    <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Show</th>
+      <th>Aprroval</th>
+    </tr>
+  </thead>
+  <tbody>
+        <%= render @userapprovedcards %>
+</tbody>
+</table>
+    <% else %>
     <br>
     <br>
     <h3 style="text-align: center; font-weight: 300;"> You do not have any confirmed and approved cards <i class="fa fa-smile-o" aria-hidden="true"></i></h3>
+    <% end %>
   </div>
   </div>
 

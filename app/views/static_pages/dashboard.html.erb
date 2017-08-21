@@ -1,0 +1,93 @@
+<style type="text/css">
+
+.pendingcards{
+  background-color: #ffffff;
+  border: 3px solid #e9ecef;
+  width: 100%;
+  min-height: 150px;
+}
+
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #ffffff">
+  <a class="navbar-brand" style="color: #eb3812;" href="#">Itunes Gift Cards</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Help</a>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Sign Out", destroy_user_session_path, :method => :delete, :class => "nav-link" %>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+ <% if notice %>
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <p class="notice"><%= notice %></p>
+</div>
+<% end %>
+<br>
+<h2 style="text-align: center; font-weight: 300;">hello Admin! Welcome to your Dashboard.</h2>
+<br>
+ <div class="container">
+  <h4>Pending Approval</h4>
+  <div class="pendingcards">
+    <% if @yetapprovedcards.any? %>
+    <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Show</th>
+      <th>Aprroval</th>
+    </tr>
+  </thead>
+  <tbody>
+        <%= render @yetapprovedcards %>
+</tbody>
+</table>
+    <% else %>
+    <br>
+    <br>
+    <h3 style="text-align: center; font-weight: 300;"> No giftcards awaiting approval <i class="fa fa-smile-o" aria-hidden="true"></i></h3>
+    <% end %>
+  </div>
+  </div>
+  <br>
+  <div class="container">
+  <h4>Approved Gift Cards</h4>
+  <div class="pendingcards">
+    <% if @approvedcards.any? %>
+    <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Show</th>
+      <th>Aprroval</th>
+    </tr>
+  </thead>
+  <tbody>
+        <%= render @approvedcards %>
+</tbody>
+</table>
+    <% else %>
+    <br>
+    <br>
+    <h3 style="text-align: center; font-weight: 300;"> No giftcards Approved yet <i class="fa fa-smile-o" aria-hidden="true"></i></h3>
+    <% end %>
+  </div>
+  </div>

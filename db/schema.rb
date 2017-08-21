@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170819015403) do
+ActiveRecord::Schema.define(version: 20170821033828) do
 
   create_table "bitcoins", force: :cascade do |t|
     t.string   "cardamount"
@@ -18,8 +18,25 @@ ActiveRecord::Schema.define(version: 20170819015403) do
     t.integer  "user_id"
     t.string   "bitcoinnumber"
     t.boolean  "terms"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                                               null: false
+    t.datetime "updated_at",                                               null: false
+    t.boolean  "approved",                                 default: false
+    t.string   "paymentoptions"
+    t.decimal  "bitcointotal",   precision: 15, scale: 12
+    t.decimal  "mobilemtotal",   precision: 15, scale: 12
+    t.string   "mmnumber"
+    t.integer  "transactionid"
+  end
+
+  create_table "marks", force: :cascade do |t|
+    t.string   "marker_type"
+    t.integer  "marker_id"
+    t.string   "markable_type"
+    t.integer  "markable_id"
+    t.string   "mark",          limit: 128
+    t.datetime "created_at"
+    t.index ["markable_id", "markable_type", "mark"], name: "index_marks_on_markable_id_and_markable_type_and_mark"
+    t.index ["marker_id", "marker_type", "mark"], name: "index_marks_on_marker_id_and_marker_type_and_mark"
   end
 
   create_table "photos", force: :cascade do |t|

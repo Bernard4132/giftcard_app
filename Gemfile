@@ -36,6 +36,10 @@ gem 'bcrypt', '~> 3.1.11', platforms: [:ruby, :x64_mingw, :mingw]
 
 gem 'devise'
 
+gem "mini_magick"
+
+gem 'fog'
+
 gem 'wicked'
 
 gem 'markable' , github: 'effektz/markable'

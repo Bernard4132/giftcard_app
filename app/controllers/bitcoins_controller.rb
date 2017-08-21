@@ -1,6 +1,8 @@
 class BitcoinsController < ApplicationController
   before_action :set_bitcoin, only: [:show, :edit, :update, :destroy]
 
+  before_action :authenticate_user!
+
   # GET /bitcoins
   # GET /bitcoins.json
   def index
@@ -20,6 +22,23 @@ class BitcoinsController < ApplicationController
   # GET /bitcoins/1/edit
   def edit
   end
+
+def approve
+  @bitcoin = Bitcoin.find(params[:id])
+  @bitcoin.update(approved: true)
+  redirect_to "/dashboard"
+  flash[:notice] = 'You have approved the Card. Kindly make payments within 48 hours as promised'
+end
+
+  def confirm
+ @bitcoin = Bitcoin.find(params[:id])
+  current_user.set_mark :confirm, @bitcoin
+  flash[:notice] = 'Transaction reviewed and confirmed. You will receive approval from the admin shortly. Check your email. Thank you.'
+   respond_to do |format|
+    format.html {redirect_to "/"}
+      format.js 
+    end
+end
 
   # POST /bitcoins
   # POST /bitcoins.json
@@ -69,6 +88,10 @@ class BitcoinsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bitcoin_params
-      params.require(:bitcoin).permit(:cardamount, :number, :user_id, :bitcoinnumber, :terms, :photos_attributes => [:gcpicture])
+      params.require(:bitcoin).permit(:cardamount, :number, :bitcoinnumber, :terms, 
+                                      :approved, :paymentoptions, :bitcointotal, :mobilemtotal, :mmnumber,
+                                      :photos_attributes => [:gcpicture])
     end
 end
+
+

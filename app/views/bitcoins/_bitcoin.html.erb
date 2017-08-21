@@ -1,0 +1,16 @@
+<tr>
+      <th scope="row"><%= bitcoin.transactionid %></th>
+      <td><%= bitcoin.user.firstname %> <%= bitcoin.user.lastname %></td>
+      <td><%= bitcoin.user.email %></td>
+      <td><%= link_to 'View Order', bitcoin %> </td>
+      <td>
+        <% if current_user.admin? %>
+      	<%= link_to 'Approve Order', approve_bitcoin_path(bitcoin), method: :post, :class => "btn btn-success" %>
+        <% end %>
+        <% if bitcoin.approved? %>
+        Approved
+        <% else %>
+        Awaiting Approval
+        <% end %>
+      </td>
+    </tr>

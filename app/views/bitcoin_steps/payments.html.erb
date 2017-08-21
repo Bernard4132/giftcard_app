@@ -64,10 +64,19 @@ width: 30%;
     <% end %>
   </div>
   
+  <% if @bitcoin.paymentoptions == "Bitcoin" %>
    <div class="form-group">
     <label><i class="fa fa-btc" aria-hidden="true"></i> Bitcoin Payment</label>
     <%= f.text_field :bitcoinnumber, :class => "form-control", :placeholder => "Enter Bitcoin number" %>
   </div>
+  <% end %>
+
+  <% if @bitcoin.paymentoptions == "Mobile Money" %>
+  <div class="form-group">
+    <label><i class="fa fa-money" aria-hidden="true"></i> Mobile Money Payment</label>
+    <%= f.text_field :mmnumber, :class => "form-control", :placeholder => "Enter Mobile Money number" %>
+  </div>
+  <% end %>
 
   <div class="form-check">
     <label class="form-check-label">
