@@ -41,29 +41,50 @@
   <div class="row justify-content-md-center">
     <div class="col-sm-12 col-md-6 col-md-offset-3">
 <p>
-  <strong>Cardamount:</strong>
-  <%= @bitcoin.cardamount %>
+  <strong>Card type:</strong>
+  <%= @bitcoin.cardamount %> dollar gift card
 </p>
 
 <p>
-  <strong>Number:</strong>
+  <strong>Number of cards:</strong>
   <%= @bitcoin.number %>
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @bitcoin.user_id %>
+  <strong>Payment Options:</strong>
+  <%= @bitcoin.paymentoptions %>
 </p>
 
 <p>
-  <strong>Bitcoinnumber:</strong>
-  <%= @bitcoin.bitcoinnumber %>
+    <% if @bitcoin.paymentoptions == "Mobile Money" %>
+    <strong>Mobile Money Number:</strong>
+    <%= @bitcoin.mmnumber %>
+  <% end %>
 </p>
 
 <p>
-  <strong>Terms:</strong>
-  <%= @bitcoin.terms %>
+<% if @bitcoin.paymentoptions == "Mobile Money" %>
+    <strong>Total Amount to be received:</strong>
+    GHc <%= @bitcoin.mobilemtotal %>
+  <% end %>
+
 </p>
+
+<p>
+    <% if @bitcoin.paymentoptions == "Bitcoin" %>
+    <strong>Bitcoin Number:</strong>
+    <%= @bitcoin.bitcoinnumber %>
+  <% end %>
+</p>
+
+<p>
+<% if @bitcoin.paymentoptions == "Bitcoin" %>
+    <strong>Total Amount to be received:</strong>
+    GHc <%= @bitcoin.bitcointotal %>
+  <% end %>
+
+</p>
+  
 
 <ul style="list-style-type: none;">
     <%= render @bitcoin.photos %>

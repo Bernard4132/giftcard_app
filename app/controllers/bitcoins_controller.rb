@@ -26,6 +26,8 @@ class BitcoinsController < ApplicationController
 def approve
   @bitcoin = Bitcoin.find(params[:id])
   @bitcoin.update(approved: true)
+  @user = @bitcoin.user
+  ApprovalMailer.approval_notification(@user, @bitcoin).deliver_later
   redirect_to "/dashboard"
   flash[:notice] = 'You have approved the Card. Kindly make payments within 48 hours as promised'
 end
@@ -45,8 +47,14 @@ end
   def create
     @bitcoin = Bitcoin.new(bitcoin_params)
     @bitcoin.user = current_user
+    @adminusers = User.where(admin: true).all
     respond_to do |format|
       if @bitcoin.save
+
+        @adminusers.uniq.each do |user|
+        CardMailer.cardupload_notification(user, @bitcoin).deliver_later
+      end
+
         format.html { redirect_to bitcoin_steps_path, notice: 'Add images and enter payment details' }
         format.json { render :show, status: :created, location: @bitcoin }
       else
