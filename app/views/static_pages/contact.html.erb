@@ -1,5 +1,3 @@
-
-
 <style type="text/css">
 
 .loginme{
@@ -41,63 +39,19 @@
   </div>
 </nav>
 
-
-<h2 class="loginme">Sign Up! <i class="fa fa-plus-circle" aria-hidden="true"></i></h2>
-<br>
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-
-
 <div class="container">
-  <div class="row justify-content-md-center">
-    <div class="col-sm-12 col-md-6 col-md-offset-3">
-
-      <div class="form-row">
-    <div class="col">
-      <label>First name</label>
- <%= f.text_field :firstname, autofocus: true, :class => "form-control", :placeholder => "First name", :required => "true" %>
-     </div>
-    <div class="col">
-      <label>Last name</label>
-      <%= f.text_field :lastname, :class => "form-control", :placeholder => "Last name", :required => "true" %>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="holme">
+        <br><br>
+        <h1 style="color: #eb3812;">Contact</h1>
+        <p class="footerabout">
+         Find and contact us
+        </p>
+      </div>
     </div>
   </div>
-
-<div class="form-group" style="margin-top: 18px;">
-    <label for="exampleInputEmail1">Email address</label>
-    <%= f.email_field :email, autofocus: true, :class => "form-control", :placeholder => "Enter email", :required => "true" %>
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Phone Number</label>
-    <%= f.email_field :phone, :class => "form-control", :placeholder => "Enter phone number", :required => "true"  %>
-  </div>
-  <div class="form-group">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off", :class => "form-control", :placeholder => "Password"  %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control", :placeholder => "Password confirmation"  %>
-  </div>
-
-
-
-
-  <button type="submit" class="btn btn-primary">Sign Up</button><br><br>
-<%= render "devise/shared/links" %>
-  </div>
 </div>
-</div>
-
-
-<% end %>
-
 
 <section class="landfooter">
 
@@ -160,6 +114,3 @@
 </div>
 
 </section>
-
-
-

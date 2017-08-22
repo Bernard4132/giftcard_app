@@ -12,4 +12,12 @@ def dashboard
 	@approvedcards = Bitcoin.where(approved: true).all
 end
 
+def about
+	
+end
+
+def contact
+	
+end
+
 end
