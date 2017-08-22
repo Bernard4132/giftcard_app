@@ -26,7 +26,7 @@ private
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bitcoin_params
-      params.require(:bitcoin).permit(:cardamount, :number, :user_id, :bitcoinnumber, :terms, :photos_attributes => [:gcpicture])
+      params.require(:bitcoin).permit(:cardamount, :number, :user_id, :bitcoinnumber, :mobilemoneyname, :mobilemoneynumber, :terms, :photos_attributes => [:gcpicture])
     end
 
   

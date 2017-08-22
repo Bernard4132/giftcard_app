@@ -57,14 +57,17 @@
 
 <p>
     <% if @bitcoin.paymentoptions == "Mobile Money" %>
+    <strong>Mobile Money Name:</strong>
+    <%= @bitcoin.mobilemoneyname %>
+    <br>
     <strong>Mobile Money Number:</strong>
-    <%= @bitcoin.mmnumber %>
+    <%= @bitcoin.mobilemoneynumber %>
   <% end %>
 </p>
 
 <p>
 <% if @bitcoin.paymentoptions == "Mobile Money" %>
-    <strong>Total Amount to be received:</strong>
+    <strong>Total Amount to be received(Cedis):</strong>
     GHc <%= @bitcoin.mobilemtotal %>
   <% end %>
 
@@ -82,15 +85,21 @@
     <strong>Total Amount to be received:</strong>
     GHc <%= @bitcoin.bitcointotal %>
   <% end %>
-
 </p>
+
+<p>
+<strong>Total Amount to be received(Dollars):</strong>
+<%= @bitcoin.dollarvalue %>
+</p>
+
+
   
 
 <ul style="list-style-type: none;">
     <%= render @bitcoin.photos %>
 </ul>
-
-<%= link_to 'Confirm Transaction', confirm_bitcoin_path(@bitcoin), method: :post, :class => "btn btn-info", :style => "margin-top: 10px; margin-right: 10px;" %>
+<p style="text-align: center;"><small>You will receive an email once your card is approved. Payment process proceeds immediately after that.</small></p>
+<%= link_to 'Confirm Transaction', confirm_bitcoin_path(@bitcoin), method: :post, :class => "btn btn-primary", :style => "margin-top: 5px; margin-left: 30px; text-align: center;" %>
 
 </div>
 </div>

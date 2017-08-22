@@ -6,6 +6,7 @@ class Bitcoin < ApplicationRecord
 	before_create :bitcoin_total
 	before_create :mobilemoney_total
 	before_create :generate_transaction
+	before_create :dollarvalue_total
 
 
 	private
@@ -18,7 +19,11 @@ class Bitcoin < ApplicationRecord
 		self.mobilemtotal = (self.cardamount.to_i * 0.6) * self.number.to_i * 4.42
 	end
 
+	def dollarvalue_total
+		self.dollarvalue = (self.cardamount.to_i * 0.6) * self.number.to_i * 1
+	end
+
 	def generate_transaction
-       self.transactionid = rand(1011..9909)
+       self.transactionid = rand(10011..99099)
 	end
 end

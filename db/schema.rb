@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170821033828) do
+ActiveRecord::Schema.define(version: 20170822030955) do
 
   create_table "bitcoins", force: :cascade do |t|
     t.string   "cardamount"
@@ -18,14 +18,17 @@ ActiveRecord::Schema.define(version: 20170821033828) do
     t.integer  "user_id"
     t.string   "bitcoinnumber"
     t.boolean  "terms"
-    t.datetime "created_at",                                               null: false
-    t.datetime "updated_at",                                               null: false
-    t.boolean  "approved",                                 default: false
+    t.datetime "created_at",                                                  null: false
+    t.datetime "updated_at",                                                  null: false
+    t.boolean  "approved",                                    default: false
     t.string   "paymentoptions"
-    t.decimal  "bitcointotal",   precision: 15, scale: 12
-    t.decimal  "mobilemtotal",   precision: 15, scale: 12
+    t.decimal  "bitcointotal",      precision: 15, scale: 12
+    t.decimal  "mobilemtotal",      precision: 15, scale: 12
     t.string   "mmnumber"
     t.integer  "transactionid"
+    t.string   "mobilemoneyname"
+    t.string   "mobilemoneynumber"
+    t.decimal  "dollarvalue",       precision: 15, scale: 3
   end
 
   create_table "marks", force: :cascade do |t|
@@ -62,6 +65,7 @@ ActiveRecord::Schema.define(version: 20170821033828) do
     t.boolean  "admin",                  default: false
     t.string   "firstname"
     t.string   "lastname"
+    t.integer  "phone"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -17,5 +17,7 @@
 !/log/.keep
 !/tmp/.keep
 
+recaptcha.env
+
 # Ignore Byebug command history file.
 .byebug_history

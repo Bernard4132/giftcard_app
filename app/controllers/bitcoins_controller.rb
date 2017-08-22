@@ -96,8 +96,8 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bitcoin_params
-      params.require(:bitcoin).permit(:cardamount, :number, :bitcoinnumber, :terms, 
-                                      :approved, :paymentoptions, :bitcointotal, :mobilemtotal, :mmnumber,
+      params.require(:bitcoin).permit(:cardamount, :number, :bitcoinnumber, :mmnumber, :terms, 
+                                      :approved, :paymentoptions, :bitcointotal, :mobilemtotal, :mobilemoneyname, :mobilemoneynumber,
                                       :photos_attributes => [:gcpicture])
     end
 end

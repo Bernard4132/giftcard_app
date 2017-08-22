@@ -73,8 +73,10 @@ width: 30%;
 
   <% if @bitcoin.paymentoptions == "Mobile Money" %>
   <div class="form-group">
-    <label><i class="fa fa-money" aria-hidden="true"></i> Mobile Money Payment</label>
-    <%= f.text_field :mmnumber, :class => "form-control", :placeholder => "Enter Mobile Money number" %>
+    <label><i class="fa fa-user" aria-hidden="true"></i> Mobile Money Name</label>
+    <%= f.text_field :mobilemoneyname, :class => "form-control", :placeholder => "Enter Mobile Money name" %>
+    <label style="margin-top: 12px;"><i class="fa fa-money" aria-hidden="true"></i> Mobile Money Number</label>
+    <%= f.text_field :mobilemoneynumber, :class => "form-control", :placeholder => "Enter Mobile Money number" %>
   </div>
   <% end %>
 
