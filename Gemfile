@@ -36,10 +36,6 @@ gem 'bcrypt', '~> 3.1.11', platforms: [:ruby, :x64_mingw, :mingw]
 
 gem 'devise'
 
-gem 'dotenv-rails', :require => 'dotenv/rails-now'
-
-gem "recaptcha", require: "recaptcha/rails"
-
 gem "mini_magick"
 
 gem 'fog'
