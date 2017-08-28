@@ -19,6 +19,20 @@ width: 30%;
   min-height: 150px;
 }
 
+@media only screen and (min-width : 100px) and (max-width : 600px) {
+
+.autocent1{
+    margin-left: 10%;
+margin-right:10%;
+width: 80%; 
+}
+
+.classyhome{
+  font-size: 25px;
+}
+
+}
+
 </style>
 <body>
 
@@ -35,6 +49,11 @@ width: 30%;
       <li class="nav-item">
         <a class="nav-link" href="#">Help</a>
       </li>
+      <% if current_user.admin? %>
+      <li class="nav-item">
+        <a class="nav-link" href="/dashboard">Admin Area</a>
+      </li>
+      <% end %>
       <li class="nav-item">
         <%= link_to "Sign Out", destroy_user_session_path, :method => :delete, :class => "nav-link" %>
       </li>
@@ -45,7 +64,7 @@ width: 30%;
 <div class="container">
 
     <div class="jumbotron jumbotron-fluid" style="padding: 20px;">
-  <h1 class="display-3" style="text-align: center;">Hello, <%= current_user.firstname %></h1>
+  <h1 class="display-3 classyhome" style="text-align: center;">Hello, <%= current_user.firstname %></h1>
   <p class="lead" style="text-align: center;">This is your Dashboard. Add your gift cards by clicking on the button below. Also check here for the status on your order. Wether pending or approved.</p>
   <hr class="my-4">
   <p style="text-align: center;">The processes followed here are very simple and payment is made within 48 hours of confirmation and approval.</p>
