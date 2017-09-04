@@ -1,7 +1,11 @@
 <tr>
       <th scope="row"><%= bitcoin.transactionid %></th>
       <td><%= bitcoin.user.firstname %> <%= bitcoin.user.lastname %></td>
-      <td><%= bitcoin.user.email %></td>
+      <td>
+         <%= bitcoin.user.email %>
+         <br>
+        <%= bitcoin.user.countrycode %> <%= bitcoin.user.phone %>
+      </td>
       <td><%= link_to 'View Order', bitcoin %> </td>
       <td>
         <% if current_user.admin? %>
