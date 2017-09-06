@@ -1,5 +1,5 @@
 class CardMailer < ApplicationMailer
-	default from: "cardnotification@itunescash.io"
+	default from: "alerts@itunescash.io"
 
 	def cardupload_notification(user, bitcoin)
   	@user = user

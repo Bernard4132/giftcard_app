@@ -1,5 +1,5 @@
 class ApprovalMailer < ApplicationMailer
-   default from: "approvalnotification@itunescash.io"
+   default from: "alerts@itunescash.io"
 
 	def approval_notification(user, bitcoin)
   	@user = user
