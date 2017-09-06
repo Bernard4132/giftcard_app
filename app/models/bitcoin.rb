@@ -16,7 +16,7 @@ class Bitcoin < ApplicationRecord
 	end
 
 	def mobilemoney_total
-		self.mobilemtotal = (self.cardamount.to_i * 0.6) * self.number.to_i * 4.42
+		self.mobilemtotal = (self.cardamount.to_i * 0.6) * self.number.to_i * 4.2
 	end
 
 	def dollarvalue_total
