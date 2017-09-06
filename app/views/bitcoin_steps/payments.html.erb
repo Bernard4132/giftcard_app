@@ -59,7 +59,7 @@ width: 30%;
       
       <% end %>
       <div class="col-sm-10">
-        <%= f_photo.file_field :image, multiple: true, :name=>'bitcoin[photos_attributes][][gcpicture]', :class => 'form-control' %>
+        <%= f_photo.file_field :image, multiple: true, :name=>'bitcoin[photos_attributes][][gcpicture]', :class => 'form-control', :required => "true"  %>
       </div>
     <% end %>
   </div>
@@ -67,22 +67,22 @@ width: 30%;
   <% if @bitcoin.paymentoptions == "Bitcoin" %>
    <div class="form-group">
     <label><i class="fa fa-btc" aria-hidden="true"></i> Bitcoin Payment</label>
-    <%= f.text_field :bitcoinnumber, :class => "form-control", :placeholder => "Enter Bitcoin address" %>
+    <%= f.text_field :bitcoinnumber, :class => "form-control", :placeholder => "Enter Bitcoin address" , :required => "true" %>
   </div>
   <% end %>
 
   <% if @bitcoin.paymentoptions == "Mobile Money" %>
   <div class="form-group">
     <label><i class="fa fa-user" aria-hidden="true"></i> Mobile Money Name</label>
-    <%= f.text_field :mobilemoneyname, :class => "form-control", :placeholder => "Enter Mobile Money name" %>
+    <%= f.text_field :mobilemoneyname, :class => "form-control", :placeholder => "Enter Mobile Money name" , :required => "true" %>
     <label style="margin-top: 12px;"><i class="fa fa-money" aria-hidden="true"></i> Mobile Money Number</label>
-    <%= f.text_field :mobilemoneynumber, :class => "form-control", :placeholder => "Enter Mobile Money number" %>
+    <%= f.text_field :mobilemoneynumber, :class => "form-control", :placeholder => "Enter Mobile Money number" , :required => "true" %>
   </div>
   <% end %>
 
   <div class="form-check">
     <label class="form-check-label">
-         <%= f.check_box :terms, :class => "form-check-input" %>
+         <%= f.check_box :terms, :class => "form-check-input", :required => "true"  %>
       I accept terms and conditions. <a href="/terms">Terms and Conditions</a>
     </label>
   </div>
