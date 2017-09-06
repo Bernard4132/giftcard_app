@@ -63,7 +63,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'itunescash.io' }
   # Use a different logger for distributed setups.
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
-  config.action_mailer.asset_host = 'https://itunescash.io'
+  config.action_mailer.asset_host = 'http://itunescash.io'
 
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
