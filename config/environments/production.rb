@@ -34,25 +34,36 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
-
-  # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
-    config.action_mailer.delivery_method = :test
-  host = 'www.itunescash.io'
-  config.action_mailer.default_url_options = { host: host }
-  
-  config.action_mailer.delivery_method = :smtp
-  #configuration settings
-  ActionMailer::Base.smtp_settings = {
-   address: "smtp.gmail.com",
-   port: "587",
-   domain: "gmail.com",
-   authentication: "plain",
-   enable_starttls_auto: true,
-   user_name: 'itunescashgh@gmail.com',
-   password: 'Qazxsw12'
- }
+  # Specifies the header that your server uses for sending files.
+  # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
+  # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
+  config.action_mailer.default_url_options = { host: 'www.itunescash.io' }
 
+  config.action_mailer.delivery_method = :smtp
+
+  ActionMailer::Base.smtp_settings = {
+     :address    => 'smtp.sendgrid.net',
+     :port       => '587',
+     :authentication  => :plain,
+     :user_name => ENV['SENDGRID_USERNAME'],
+     :password  => ENV['SENDGRID_PASSWORD'],
+     :domain   =>  'heroku.com',
+     :enable_starttls_auto => true
+  }
+  # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
+  config.force_ssl = true
+
+  # Set to :debug to see everything in the log.
+  config.log_level = :info
+
+  # Prepend all log lines with the following tags.
+  # config.log_tags = [ :subdomain, :uuid ]
+  # config/environments/production.rb
+  config.action_mailer.default_url_options = { :host => 'itunescash.io' }
+  # Use a different logger for distributed setups.
+  # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
+  config.action_mailer.asset_host = 'https://itunescash.io'
 
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil

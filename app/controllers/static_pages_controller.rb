@@ -8,8 +8,10 @@ def home
 end
 
 def dashboard
+	if current_user.admin?
 	@yetapprovedcards = Bitcoin.where(approved: false).all
 	@approvedcards = Bitcoin.where(approved: true).all
+    end
 end
 
 def about
