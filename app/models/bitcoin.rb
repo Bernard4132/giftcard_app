@@ -7,6 +7,8 @@ class Bitcoin < ApplicationRecord
 	before_create :mobilemoney_total
 	before_create :generate_transaction
 	before_create :dollarvalue_total
+	default_scope -> { order('created_at DESC') }
+
 
 
 	private
