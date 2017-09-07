@@ -4,6 +4,6 @@ class ApprovalMailer < ApplicationMailer
 	def approval_notification(user, bitcoin)
   	@user = user
   	@bitcoin = bitcoin
-  	mail to: user.email , subject: "[Itunes Cash] Your Gift card has been Approved!"
+  	mail to: user.email , subject: "[iTunesCash] Your iTunesCash is on it's Way!!"
   end
 end

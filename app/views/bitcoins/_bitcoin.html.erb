@@ -13,10 +13,17 @@
         <% if current_user.admin? %>
       	<%= link_to 'Approve Order', approve_bitcoin_path(bitcoin), method: :post, :class => "btn btn-success" %>
         <% end %>
+        <% if current_user.admin? == false %>
         <% if bitcoin.approved? %>
         Approved
         <% else %>
         Awaiting Approval
         <% end %>
+        <% end %>
+      </td>
+      <td>
+       <% if current_user.admin? && bitcoin.approved? == false %>
+       <%= link_to 'Decline Order', decline_bitcoin_path(bitcoin), method: :post, :class => "btn btn-danger" %>
+       <% end %>
       </td>
     </tr>

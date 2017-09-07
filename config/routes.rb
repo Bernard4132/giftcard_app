@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :bitcoins do
     member { post :approve }
     member { post :confirm }
+    member { post :decline }
   end
 
   resources :bitcoin_steps

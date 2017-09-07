@@ -32,9 +32,20 @@ def approve
   flash[:notice] = 'You have approved the Card. Kindly make payments within 48 hours as promised'
 end
 
+def decline
+  @bitcoin = Bitcoin.find(params[:id])
+  @bitcoin.update(declined: true)
+  @user = @bitcoin.user
+  DeclineMailer.decline_notification(@user, @bitcoin).deliver_later
+  redirect_to "/dashboard"
+  flash[:notice] = 'You have declined the Card.'
+end
+
   def confirm
  @bitcoin = Bitcoin.find(params[:id])
   current_user.set_mark :confirm, @bitcoin
+  @user = current_user
+  ConfirmMailer.confirm_notification(@user, @bitcoin).deliver_later
   flash[:notice] = 'Transaction reviewed and confirmed. You will receive approval from the admin shortly. Check your email. Thank you.'
    respond_to do |format|
     format.html {redirect_to "/"}
