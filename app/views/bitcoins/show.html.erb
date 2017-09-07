@@ -95,7 +95,36 @@
     <%= render @bitcoin.photos %>
 </ul>
 <p style="text-align: center;"><small>You will receive an email once your card is approved. Payment process proceeds immediately after that.</small></p>
+<% if current_user == @bitcoin.user %>
 <%= link_to 'Confirm Transaction', confirm_bitcoin_path(@bitcoin), method: :post, :class => "btn btn-primary", :style => "margin-top: 5px; margin-left: 30px; text-align: center;" %>
+<% end %>
+
+<% if current_user.admin? %>
+
+ <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Approve</th>
+      <th>Decline</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>
+        <% if current_user.admin? %>
+        <%= link_to 'Approve Order', approve_bitcoin_path(@bitcoin), method: :post, :class => "btn btn-success" %>
+        <% end %>
+      </td>
+      <td>
+       <% if current_user.admin? && @bitcoin.approved? == false %>
+       <%= link_to 'Decline Order', decline_bitcoin_path(@bitcoin), method: :post, :class => "btn btn-danger" %>
+       <% end %>
+      </td>
+      </tr>
+</tbody>
+</table>
+
+<% end %>
 
 </div>
 </div>
