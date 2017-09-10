@@ -83,7 +83,7 @@ width: 80%;
 <% end %>
 <br>
   <div class="container">
-  <h4>Pending Approval</h4>
+  <h4>Confirmed and awaiting Approval</h4>
   <div class="pendingcards">
     <% if @userconfirmedcards.any? %>
     <table class="table table-bordered">
@@ -111,7 +111,7 @@ width: 80%;
 <br>
 <br>
   <div class="container">
-  <h4 style="color: #32cd56;">Confirmed and Approved</h4>
+  <h4 style="color: #32cd56;">Approved Cards</h4>
   <div class="pendingcards">
      <% if @userapprovedcards.any? %>
     <table class="table table-bordered">
@@ -132,6 +132,33 @@ width: 80%;
     <br>
     <br>
     <h3 style="text-align: center; font-weight: 300;"> You do not have any confirmed and approved cards <i class="fa fa-smile-o" aria-hidden="true"></i></h3>
+    <% end %>
+  </div>
+  </div>
+  <br>
+<br>
+  <div class="container">
+  <h4 style="color: red;">Declined Cards</h4>
+  <div class="pendingcards">
+     <% if @userapprovedcards.any? %>
+    <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Phone & Email</th>
+      <th>Show</th>
+      <th>Approve</th>
+    </tr>
+  </thead>
+  <tbody>
+        <%= render @userdeclinedcards %>
+</tbody>
+</table>
+    <% else %>
+    <br>
+    <br>
+    <h3 style="text-align: center; font-weight: 300;"> You do not have any declined cards <i class="fa fa-smile-o" aria-hidden="true"></i></h3>
     <% end %>
   </div>
   </div>

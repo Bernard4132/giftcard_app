@@ -22,8 +22,11 @@
         <% end %>
       </td>
       <td>
-       <% if current_user.admin? && bitcoin.approved? == false %>
+       <% if current_user.admin? && !bitcoin.approved? %>
+       <% if bitcoin.declined? %>
+       <% else %>
        <%= link_to 'Decline Order', decline_bitcoin_path(bitcoin), method: :post, :class => "btn btn-danger" %>
+       <% end %>
        <% end %>
       </td>
     </tr>

@@ -95,4 +95,31 @@
   </div>
   </div>
 
+  <br>
+  <div class="container">
+  <h4>Declined Gift Cards</h4>
+  <div class="pendingcards">
+    <% if @approvedcards.any? %>
+    <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Phone & Email</th>
+      <th>Show</th>
+      <th>Approve</th>
+    </tr>
+  </thead>
+  <tbody>
+        <%= render @declinedcards %>
+</tbody>
+</table>
+    <% else %>
+    <br>
+    <br>
+    <h3 style="text-align: center; font-weight: 300;"> No giftcards Approved yet <i class="fa fa-smile-o" aria-hidden="true"></i></h3>
+    <% end %>
+  </div>
+  </div>
+
   <% end %>
