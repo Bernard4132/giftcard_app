@@ -4,13 +4,13 @@ class BitcoinStepsController < ApplicationController
   
   def show
   	@user = current_user
-    @bitcoin = current_user.bitcoins.last
+    @bitcoin = current_user.bitcoins.first
     @bitcoin.photos.new
     render_wizard
   end
   
   def update
-    @bitcoin = current_user.bitcoins.last  
+    @bitcoin = current_user.bitcoins.first  
     if @bitcoin.update(bitcoin_params)
         if params[:photos_attributes]
           params[:photos_attributes].each do |photo|
