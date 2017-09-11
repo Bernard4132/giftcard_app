@@ -43,9 +43,13 @@ end
 
   def confirm
  @bitcoin = Bitcoin.find(params[:id])
+ @adminusers = User.where(admin: true).all
   current_user.set_mark :confirm, @bitcoin
   @user = current_user
   ConfirmMailer.confirm_notification(@user, @bitcoin).deliver_later
+   @adminusers.uniq.each do |user|
+        CardMailer.cardupload_notification(user, @bitcoin).deliver_later
+      end
   flash[:notice] = 'Transaction reviewed and confirmed. You will receive approval from the admin shortly. Check your email. Thank you.'
    respond_to do |format|
     format.html {redirect_to "/"}
@@ -58,14 +62,8 @@ end
   def create
     @bitcoin = Bitcoin.new(bitcoin_params)
     @bitcoin.user = current_user
-    @adminusers = User.where(admin: true).all
     respond_to do |format|
       if @bitcoin.save
-
-        @adminusers.uniq.each do |user|
-        CardMailer.cardupload_notification(user, @bitcoin).deliver_later
-      end
-
         format.html { redirect_to bitcoin_steps_path, notice: 'Add images and enter payment details' }
         format.json { render :show, status: :created, location: @bitcoin }
       else
