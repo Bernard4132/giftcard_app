@@ -28,4 +28,11 @@ def terms
 	
 end
 
+def cashoutgiftcards
+end
+
+def cashoutgiftcardst2
+	
+end
+
 end
