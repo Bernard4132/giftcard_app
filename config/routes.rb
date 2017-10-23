@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :blogs
   root to: "static_pages#home"
   match 'dashboard', to: 'static_pages#dashboard', via: 'get'
   match 'about', to: 'static_pages#about', via: 'get'

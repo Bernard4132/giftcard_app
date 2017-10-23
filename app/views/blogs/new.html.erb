@@ -1,0 +1,120 @@
+<style type="text/css">
+
+.loginme{
+  text-align: center;
+  color: #eb3812;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.landfooter{
+  margin-top: 100px;
+  background-color: #eb3812;
+  color: white;
+  padding: 50px;
+}
+
+.footerabout{
+  text-align: justify;
+  font-weight: 300;
+}
+
+</style>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #ffffff">
+  <a class="navbar-brand" style="color: #eb3812;" href="/">
+<img src="https://res.cloudinary.com/nikasemo/image/upload/v1508752599/navlogo_k1yino.png" style="height: 100%; margin-right: 0px;">
+        <span style="margin-top: 8px;"> iTunesCash.io</span></a>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/users/sign_in">Blog<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">About Us</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<br>
+<h1 style="text-align: center;">New Blog Post</h1>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+<%= render 'form', blog: @blog %>
+</div>
+</div>
+</div>
+
+<section class="landfooter">
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-sm-12">
+      <div class="innerholdfooter">
+        <h4 style="color: #ffffff;">About ItunesCash.io</h4>
+        <p class="footerabout">
+                 Founded in 2015 based in Ghana, iTunesCash is a platform for cashing out unwanted and unused iTunes gift cards for Mobile Money or Bitcoin. Many people have unwanted or unused iTunes gift cards which are sometimes left to collect dust....<br><a href="/about" style="color: white; font-weight: 500;">Read more</a>
+        </p>
+      </div>
+    </div>
+        <div class="col-lg-4 col-sm-12">
+      <div class="innerholdfooter">
+        <h4 style="color: #ffffff;">Social Media</h4>
+        <ul style="list-style-type: none;">
+                  <li><span style="margin-right: 15px;"><i class="fa fa-facebook-official" aria-hidden="true" style="color: #fff;"></i>
+                      <a href="" style="margin-left: 0px; color: #fff;">Facebook</a>
+                  </li>
+                  <li>
+                  <i class="fa fa-twitter" aria-hidden="true" style="color: #fff;"></i>
+                  <a href="" style="margin-left: 0px; color: #fff;">Twitter</a>
+                  </li>
+                  <li>
+                   <i class="fa fa-instagram" aria-hidden="true" style="color: #fff;"></i>
+                   <a href="" style="margin-left: 0px; color: #fff;">Instagram</a>
+                  </li>
+                  <li>
+                   <i class="fa fa-google-plus-official" aria-hidden="true" style="color: #fff;"></i>
+                   <a href="" style="margin-left: 0px; color: #fff;">Google Plus</a>
+                  </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-4 col-sm-12">
+      <div class="innerholdfooter">
+        <h4 style="color: #ffffff;">Contact Us</h4>
+        <ul style="list-style-type: none;">
+                  <li><span style="margin-right: 15px;"><i class="fa fa-envelope-o" aria-hidden="true" style="color: #fff;"></i>
+                      <span style="margin-left: 0px; color: #fff;">smile@itunescash.io</span>
+                  </li>
+                  <li>
+                  <i class="fa fa-phone" aria-hidden="true" style="color: #fff;"></i>
+                  <span style="margin-left: 0px; color: #fff;">+233 507177187, +233 553393260</span>
+                  </li>
+                  <li>
+                   <i class="fa fa-whatsapp" aria-hidden="true" style="color: #fff;"></i>
+                   <span style="margin-left: 0px; color: #fff;">+233 553393260</span>
+                  </li>
+                  <li>
+                   <i class="fa fa-skype" aria-hidden="true" style="color: #fff;"></i>
+                   <span style="margin-left: 0px; color: #fff;">ItunesCash</span>
+                  </li>
+                  <li>
+                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                    <span class="dassorsoc">Working Hours<span><br>
+                     <span style="margin-left: 18px;">Mon - Saturday (8:00am - 9:00pm)</span>
+                  </li>
+        </ul>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.479260141848!2d-0.23871658581567715!3d5.64357539590894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf994cfb9aead5%3A0xf6a65dd8f485afde!2sDome+Market!5e0!3m2!1sen!2sgh!4v1503362212418" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>

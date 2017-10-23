@@ -46,6 +46,8 @@ gem 'markable' , github: 'effektz/markable'
 
 gem 'carrierwave', '~> 1.0'
 
+gem 'trix'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

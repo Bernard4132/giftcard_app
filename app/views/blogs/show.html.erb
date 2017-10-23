@@ -1,0 +1,227 @@
+<style type="text/css">
+
+.loginme{
+  text-align: center;
+  color: #eb3812;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.landfooter{
+  margin-top: 100px;
+  background-color: #eb3812;
+  color: white;
+  padding: 50px;
+}
+
+.footerabout{
+  text-align: justify;
+  font-weight: 300;
+}
+
+.aduins{
+ background:linear-gradient(0deg,rgba(0,0,0,0.8),rgba(0,0,0,0.1)),url(<%= @blog.blogimage %>);
+  background-position:center;
+  min-height: 300px;
+}
+
+#share-buttons img {
+width: 45px;
+padding: 5px;
+border: 0;
+box-shadow: 0;
+display: inline;
+}
+
+</style>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #ffffff">
+  <a class="navbar-brand" style="color: #eb3812;" href="/">
+<img src="https://res.cloudinary.com/nikasemo/image/upload/v1508752599/navlogo_k1yino.png" style="height: 100%; margin-right: 0px;">
+        <span style="margin-top: 8px;"> iTunesCash.io</span></a>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/users/sign_in">Blog<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">About Us</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<section class="aduins">
+  <div class="container">
+    <div class="row" style="margin-top: 70px">
+      <div class="col-lg-12">
+        <h1 style="text-align: center; color: white; position: relative; top: 65px; font-weight: 900;  text-shadow: 1px 0px 6px rgba(0, 0, 0, 1);"></h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<br>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+<h1 style="text-align: center;"><%= @blog.title %></h1><br>
+ <%=h raw @blog.content %>
+</div>
+ <p style="text-align: center;"><a href="/users/sign_in" class="btn btn-success btn-lg">Start Cashing Out Today!!</a></p>
+</div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-7">
+<!-- I got these buttons from simplesharebuttons.com -->
+<div id="share-buttons">
+    
+    <!-- Buffer -->
+    <a href="https://bufferapp.com/add?url=https://simplesharebuttons.com&amp;text=Simple Share Buttons" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/buffer.png" alt="Buffer" />
+    </a>
+    
+    <!-- Digg -->
+    <a href="http://www.digg.com/submit?url=https://simplesharebuttons.com" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/diggit.png" alt="Digg" />
+    </a>
+    
+    <!-- Email -->
+    <a href="mailto:?Subject=Simple Share Buttons&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 https://simplesharebuttons.com">
+        <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
+    </a>
+ 
+    <!-- Facebook -->
+    <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+    </a>
+    
+    <!-- Google+ -->
+    <a href="https://plus.google.com/share?url=https://simplesharebuttons.com" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
+    </a>
+    
+    <!-- LinkedIn -->
+    <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://simplesharebuttons.com" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
+    </a>
+    
+    <!-- Pinterest -->
+    <a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">
+        <img src="https://simplesharebuttons.com/images/somacro/pinterest.png" alt="Pinterest" />
+    </a>
+    
+    <!-- Print -->
+    <a href="javascript:;" onclick="window.print()">
+        <img src="https://simplesharebuttons.com/images/somacro/print.png" alt="Print" />
+    </a>
+    
+    <!-- Reddit -->
+    <a href="http://reddit.com/submit?url=https://simplesharebuttons.com&amp;title=Simple Share Buttons" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/reddit.png" alt="Reddit" />
+    </a>
+    
+    <!-- StumbleUpon-->
+    <a href="http://www.stumbleupon.com/submit?url=https://simplesharebuttons.com&amp;title=Simple Share Buttons" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/stumbleupon.png" alt="StumbleUpon" />
+    </a>
+    
+    <!-- Tumblr-->
+    <a href="http://www.tumblr.com/share/link?url=https://simplesharebuttons.com&amp;title=Simple Share Buttons" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/tumblr.png" alt="Tumblr" />
+    </a>
+     
+    <!-- Twitter -->
+    <a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+    </a>
+    
+    <!-- VK -->
+    <a href="http://vkontakte.ru/share.php?url=https://simplesharebuttons.com" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/vk.png" alt="VK" />
+    </a>
+    
+    <!-- Yummly -->
+    <a href="http://www.yummly.com/urb/verify?url=https://simplesharebuttons.com&amp;title=Simple Share Buttons" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/yummly.png" alt="Yummly" />
+    </a>
+
+</div>
+
+</div>
+</div>
+</div>
+
+<section class="landfooter">
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-sm-12">
+      <div class="innerholdfooter">
+        <h4 style="color: #ffffff;">About ItunesCash.io</h4>
+        <p class="footerabout">
+                 Founded in 2015 based in Ghana, iTunesCash is a platform for cashing out unwanted and unused iTunes gift cards for Mobile Money or Bitcoin. Many people have unwanted or unused iTunes gift cards which are sometimes left to collect dust....<br><a href="/about" style="color: white; font-weight: 500;">Read more</a>
+        </p>
+      </div>
+    </div>
+        <div class="col-lg-4 col-sm-12">
+      <div class="innerholdfooter">
+        <h4 style="color: #ffffff;">Social Media</h4>
+        <ul style="list-style-type: none;">
+                  <li><span style="margin-right: 15px;"><i class="fa fa-facebook-official" aria-hidden="true" style="color: #fff;"></i>
+                      <a href="" style="margin-left: 0px; color: #fff;">Facebook</a>
+                  </li>
+                  <li>
+                  <i class="fa fa-twitter" aria-hidden="true" style="color: #fff;"></i>
+                  <a href="" style="margin-left: 0px; color: #fff;">Twitter</a>
+                  </li>
+                  <li>
+                   <i class="fa fa-instagram" aria-hidden="true" style="color: #fff;"></i>
+                   <a href="" style="margin-left: 0px; color: #fff;">Instagram</a>
+                  </li>
+                  <li>
+                   <i class="fa fa-google-plus-official" aria-hidden="true" style="color: #fff;"></i>
+                   <a href="" style="margin-left: 0px; color: #fff;">Google Plus</a>
+                  </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-4 col-sm-12">
+      <div class="innerholdfooter">
+        <h4 style="color: #ffffff;">Contact Us</h4>
+        <ul style="list-style-type: none;">
+                  <li><span style="margin-right: 15px;"><i class="fa fa-envelope-o" aria-hidden="true" style="color: #fff;"></i>
+                      <span style="margin-left: 0px; color: #fff;">smile@itunescash.io</span>
+                  </li>
+                  <li>
+                  <i class="fa fa-phone" aria-hidden="true" style="color: #fff;"></i>
+                  <span style="margin-left: 0px; color: #fff;">+233 507177187, +233 553393260</span>
+                  </li>
+                  <li>
+                   <i class="fa fa-whatsapp" aria-hidden="true" style="color: #fff;"></i>
+                   <span style="margin-left: 0px; color: #fff;">+233 553393260</span>
+                  </li>
+                  <li>
+                   <i class="fa fa-skype" aria-hidden="true" style="color: #fff;"></i>
+                   <span style="margin-left: 0px; color: #fff;">ItunesCash</span>
+                  </li>
+                  <li>
+                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                    <span class="dassorsoc">Working Hours<span><br>
+                     <span style="margin-left: 18px;">Mon - Saturday (8:00am - 9:00pm)</span>
+                  </li>
+        </ul>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.479260141848!2d-0.23871658581567715!3d5.64357539590894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf994cfb9aead5%3A0xf6a65dd8f485afde!2sDome+Market!5e0!3m2!1sen!2sgh!4v1503362212418" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>

@@ -1,0 +1,35 @@
+<%= form_for(blog) do |f| %>
+  <% if blog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
+
+      <ul>
+      <% blog.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, :class=> "form-control" %>
+  </div>
+  <br>
+  <label>Blog Post Body</label>
+  <%= f.trix_editor :content, :rows => "7" %>
+  <br>
+  <div class="form-group">
+    <label>Blog Image</label><br>
+    <%= f.file_field :blogimage %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :seo %>
+    <%= f.text_field :seo, :class=> "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit "Create Post", :class => "btn btn-primary" %>
+  </div>
+<% end %>

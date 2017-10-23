@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170907191317) do
+ActiveRecord::Schema.define(version: 20171020052512) do
 
   create_table "bitcoins", force: :cascade do |t|
     t.string   "cardamount"
@@ -30,6 +30,15 @@ ActiveRecord::Schema.define(version: 20170907191317) do
     t.string   "mobilemoneynumber"
     t.decimal  "dollarvalue",       precision: 15, scale: 3
     t.boolean  "declined",                                    default: false
+  end
+
+  create_table "blogs", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.string   "blogimage"
+    t.string   "seo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "marks", force: :cascade do |t|
